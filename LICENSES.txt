@@ -1,0 +1,16 @@
+PEANUTOPIA website — component licenses
+========================================
+
+three.js (vendor/three.module.js, r160)
+Copyright (c) 2010-2024 three.js authors
+Licensed under the MIT License — https://github.com/mrdoob/three.js/blob/dev/LICENSE
+Permission is hereby granted, free of charge, to any person obtaining a copy of this
+software to deal in the software without restriction, subject to the above copyright
+notice being included in all copies or substantial portions of the Software.
+
+Everything else in this site — design, code, jar photography, the PEANUTOPIA logo
+and cap seal artwork — is the property of PEANUTOPIA.
+
+Fonts: the site uses the visitor's system font stack (no embedded font files, no
+font licensing required). If custom webfonts are added later, keep their license
+files here.

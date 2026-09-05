@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PEANUTOPIA — Stronger Fuel. Cleaner Power. | 100% Natural Peanut Butter</title>
+<meta name="description" content="PEANUTOPIA 100% Natural Peanut Butter. Roasted peanuts and gurr shakar — nothing artificial. Rs 2,000 per 500g jar, delivered fresh across Karachi." />
+<meta property="og:title" content="PEANUTOPIA — Stronger Fuel. Cleaner Power." />
+<meta property="og:description" content="100% natural peanut butter. Roasted peanuts + gurr shakar. Rs 2,000 · 500g · Karachi delivery." />
+<meta property="og:image" content="assets/jar-photo.webp" />
+<link rel="icon" type="image/png" href="assets/favicon.png" />
+<link rel="preload" as="image" href="assets/mascot-logo.webp" />
+<link rel="stylesheet" href="css/style.css?v=3" />
+</head>
+<body>
+
+<!-- ============ LOADER (Beat 0) ============ -->
+<div id="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <img src="assets/mascot-logo.webp" alt="" class="loader-logo" />
+    <div class="loader-bar"><span id="loader-fill"></span></div>
+    <p class="loader-word">PEANUTOPIA</p>
+    <p class="loader-tag">Stronger Fuel. Cleaner Power.</p>
+  </div>
+</div>
+
+<!-- ============ FIXED 3D CANVAS ============ -->
+<canvas id="stage" aria-label="Interactive 3D jar of PEANUTOPIA peanut butter. Drag to rotate during the explore section." role="img"></canvas>
+
+<!-- Fallback poster (shown when WebGL / motion unavailable) -->
+<div id="poster" hidden>
+  <div class="poster-jar">
+    <img src="assets/jar-photo.webp" alt="PEANUTOPIA 100% Natural Peanut Butter jar, 500g" />
+  </div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header id="header">
+  <a class="brand" href="#hero" aria-label="PEANUTOPIA home">
+    <img src="assets/mascot-logo.webp" alt="" class="brand-badge" />
+    <span class="brand-word">PEANUTOPIA</span>
+  </a>
+  <nav aria-label="Primary">
+    <a href="#explorer">The Jar</a>
+    <a href="#inside">Inside</a>
+    <a href="#fuel">Fuel</a>
+    <a href="#buy">Shop</a>
+  </nav>
+  <button id="cart-btn" aria-label="Open cart">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+    <span id="cart-count" class="cart-count" hidden>0</span>
+  </button>
+</header>
+
+<main id="main">
+
+  <!-- ============ BEAT 1: HERO ============ -->
+  <section class="beat beat-hero" id="hero" data-beat="hero">
+    <div class="beat-copy copy-left">
+      <p class="eyebrow">100% Natural Peanut Butter · 500g</p>
+      <h1>Stronger Fuel.<br><em>Cleaner Power.</em></h1>
+      <p class="lede">Roasted peanuts, a touch of gurr shakar, and nothing you can't pronounce. No palm oil, no preservatives, no nonsense — just stronger fuel.</p>
+      <div class="cta-row">
+        <a class="btn btn-gold" href="#buy">Shop the Jar — Rs 2,000</a>
+        <a class="btn btn-ghost" href="#explorer">Explore in 3D ↓</a>
+      </div>
+    </div>
+    <div class="scroll-cue" aria-hidden="true"><span></span>Scroll</div>
+  </section>
+
+  <!-- ============ BEAT 2: INVITATION ============ -->
+  <section class="beat beat-invite" id="invite" data-beat="invite">
+    <div class="beat-copy copy-right">
+      <h2>Get closer.</h2>
+      <p>Real jars deserve a real look. Keep scrolling and we'll take you inside — every detail, every curve, every golden drop.</p>
+      <p class="micro">Tip: the jar is real-time 3D, rendered right in your browser.</p>
+    </div>
+  </section>
+
+  <!-- ============ BEAT 3: 360 EXPLORER ============ -->
+  <section class="beat beat-explorer" id="explorer" data-beat="explorer">
+    <div class="beat-copy copy-right">
+      <h2>Give it a spin.</h2>
+      <p><strong>Drag anywhere</strong> to turn the jar. Tap the gold dots to see what makes it different.</p>
+    </div>
+    <ul id="hotspots" aria-label="Product features"></ul>
+  </section>
+
+  <!-- ============ BEAT 4: INSIDE STORY ============ -->
+  <section class="beat beat-inside" id="inside" data-beat="inside">
+    <div class="beat-copy copy-left">
+      <p class="eyebrow">Inside the jar</p>
+      <h2>Roasted. Ground.<br><em>Nothing else.</em></h2>
+      <p>Slow-roasted in small batches, stone-ground until silky. Sealed under the brushed-gold lid — because fresh is the whole point.</p>
+      <ul class="stats">
+        <li><strong>500g</strong><span>net wt</span></li>
+        <li><strong>90</strong><span>days fresh</span></li>
+        <li><strong>0</strong><span>palm oil</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ BEAT 5: FUEL ============ -->
+  <section class="beat beat-fuel" id="fuel" data-beat="fuel">
+    <div class="beat-copy copy-right">
+      <p class="eyebrow">The fuel inside</p>
+      <h2>Nature's protein jar.</h2>
+      <p>Plant protein, healthy fats and steady energy — the way nature packed it.</p>
+      <ul class="fuel-list">
+        <li><strong>7g</strong> protein per serving</li>
+        <li><strong>0mg</strong> cholesterol</li>
+        <li><strong>2</strong> ingredients: peanuts &amp; gurr shakar</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ BEAT 6: RITUAL ============ -->
+  <section class="beat beat-ritual" id="ritual" data-beat="ritual">
+    <div class="beat-copy copy-left">
+      <p class="eyebrow">The ritual</p>
+      <h2>Spoon. Toast. Repeat.</h2>
+      <p>On sourdough before the gym. Straight off the spoon after. Blended into your smoothie when nobody's watching.</p>
+      <div class="recipe-cards">
+        <article class="recipe-card"><span class="rc-icon">🍞</span><h3>Pre-Workout Toast</h3><p>Thick-cut sourdough, a heavy spoonful, banana coins.</p></article>
+        <article class="recipe-card"><span class="rc-icon">🥤</span><h3>Power Smoothie</h3><p>Oat milk, frozen berries, two big spoons of PEANUTOPIA.</p></article>
+        <article class="recipe-card"><span class="rc-icon">🥄</span><h3>The Honest Spoon</h3><p>No recipe. No rules. Just fuel.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BEAT 7: SOCIAL PROOF ============ -->
+  <section class="beat beat-social" id="social" data-beat="social">
+    <div class="beat-copy copy-center">
+      <p class="eyebrow">The Fuel Club</p>
+      <h2>Fueled by people like you.</h2>
+      <div class="reviews">
+        <blockquote><p>"Genuinely the cleanest PB I've had in Karachi. You can taste that it's real peanuts."</p><cite>— Sana A. · Clifton · Marathon runner</cite></blockquote>
+        <blockquote><p>"The jar looks so good on my shelf I bought a second one just to open."</p><cite>— Bilal K. · DHA Phase 6 · Home barista</cite></blockquote>
+        <blockquote><p>"My post-gym toast has a waiting list now. Zero regrets — delivered fresh to Gulshan."</p><cite>— Hira S. · Gulshan-e-Iqbal · Powerlifter</cite></blockquote>
+      </div>
+      <a class="btn btn-ghost" href="https://www.instagram.com/peanutopia_official/" target="_blank" rel="noopener">@peanutopia_official on Instagram ↗</a>
+    </div>
+  </section>
+
+  <!-- ============ BEAT 8: CALL TO ACTION ============ -->
+  <section class="beat beat-buy" id="buy" data-beat="cta">
+    <div class="beat-copy copy-right buy-panel">
+      <p class="seal-stamp" aria-hidden="true"><img src="assets/cap-seal.webp" alt="" /></p>
+      <h2>Ready for stronger?</h2>
+      <p class="buy-line"><strong>PEANUTOPIA 100% Natural</strong> · 500g glass jar</p>
+      <p class="price">Rs 2,000 <span class="ship-note">Delivery across Karachi only · Rs 250 — FREE on 2 jars</span></p>
+      <div class="cta-row">
+        <button class="btn btn-gold" data-add-to-cart="flagship-500g">Add to Cart</button>
+        <a class="btn btn-ghost" href="#hero">Back to the top ↑</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer id="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="assets/mascot-logo.webp" alt="PEANUTOPIA flexing peanut mascot" class="footer-mascot" />
+      <p class="footer-word">PEANUTOPIA</p>
+      <p class="footer-tag">Stronger Fuel. Cleaner Power.</p>
+    </div>
+    <nav aria-label="Footer shop"><h3>Shop</h3><a href="#buy">100% Natural 500g</a><a href="#" data-soon>Crunchy (soon)</a><a href="#" data-soon>Smooth (soon)</a></nav>
+    <nav aria-label="Footer company"><h3>Company</h3><a href="#" data-soon>Our Story</a><a href="#" data-soon>Wholesale</a><a id="contact-link" href="#">Contact</a><a href="https://www.instagram.com/peanutopia_official/" target="_blank" rel="noopener">Instagram ↗</a></nav>
+    <div class="footer-news">
+      <h3>Join the Fuel Club</h3>
+      <form id="newsletter" novalidate>
+        <label class="sr-only" for="nl-email">Email address</label>
+        <input id="nl-email" type="email" placeholder="you@example.com" required />
+        <button class="btn btn-gold" type="submit">Sign up</button>
+      </form>
+      <p id="nl-msg" role="status"></p>
+    </div>
+  </div>
+  <p class="footer-legal">© 2026 PEANUTOPIA. 100% Natural Peanut Butter. Delivering fresh across Karachi. All rights reserved.</p>
+</footer>
+
+<!-- ============ CART DRAWER ============ -->
+<div id="cart-overlay" hidden></div>
+<aside id="cart-drawer" aria-label="Shopping cart" hidden>
+  <div class="cart-head">
+    <h2>Your Cart</h2>
+    <button id="cart-close" aria-label="Close cart">×</button>
+  </div>
+  <div class="free-ship"><div class="fs-bar"><span id="fs-fill"></span></div><p id="fs-msg"></p></div>
+  <ul id="cart-items"></ul>
+  <p id="cart-empty">The jar's empty. <em>Someone</em> got hungry.</p>
+  <div class="cart-foot">
+    <p>Subtotal <strong id="cart-subtotal">Rs 0</strong></p>
+    <button class="btn btn-gold btn-wide" id="checkout-btn">Checkout</button>
+    <p class="micro">Cash on Delivery across Karachi — your order reaches us on WhatsApp.</p>
+  </div>
+</aside>
+
+
+<!-- ============ COD ORDER MODAL ============ -->
+<div id="order-overlay" hidden></div>
+<aside id="order-modal" aria-label="Place your order" hidden>
+  <div class="cart-head">
+    <h2>Place Your Order</h2>
+    <button id="order-close" aria-label="Close">×</button>
+  </div>
+  <p class="order-note">Cash on Delivery — anywhere in Karachi. Fill this in and we'll confirm your order on WhatsApp.</p>
+  <form id="order-form" novalidate>
+    <label for="of-name">Your name</label>
+    <input id="of-name" autocomplete="name" />
+    <label for="of-phone">WhatsApp / phone number</label>
+    <input id="of-phone" type="tel" inputmode="tel" autocomplete="tel" />
+    <label for="of-address">Delivery address <small>(area, street, house)</small></label>
+    <textarea id="of-address" rows="3"></textarea>
+    <label for="of-notes">Notes <small>(optional)</small></label>
+    <textarea id="of-notes" rows="2"></textarea>
+    <div class="order-summary">
+      <p id="order-items"></p>
+      <p class="order-total">Total <strong id="order-total"></strong></p>
+    </div>
+    <button class="btn btn-gold btn-wide" type="submit">Send Order on WhatsApp</button>
+    <p class="micro">We'll reply to confirm. Pay cash when the jar arrives.</p>
+  </form>
+</aside>
+
+<!-- Toast -->
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script type="module" src="js/main.js?v=27"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
